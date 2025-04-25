@@ -1,0 +1,41 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cadastro de Usuário</title>
+      <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+      <header>
+        <img src="../images/d.png" alt="Logo" class="logo" />
+        <h1>Farmácia Destaque</h1>
+        <button id="clear-button">Limpar Dados</button>
+      </header>
+
+      <main>
+        <section aria-labelledby="cadastro">
+          <h2 id="cadastro">Cadastro de Usuário</h2>
+
+          <!-- Formulário de Cadastro -->
+          <form id="cadastro-form" action="#">
+            <label for="nome">Nome *:</label>
+            <input type="text" id="nome" name="nome" required aria-label="Nome completo" />
+
+            <label for="telefone">Telefone *:</label>
+            <input type="tel" id="telefone" name="telefone" required />
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" />
+
+            <div class="error-message"></div>
+            <!-- Mensagem de erro -->
+
+            <button type="submit" id="confirm-button">Confirmar</button>
+          </form>
+        </section>
+      </main>
+
+      <script src="../js/script.js"></script>
+    </body>
+  </html>

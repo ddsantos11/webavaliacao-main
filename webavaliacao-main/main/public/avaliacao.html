@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação da Experiência</title>
+    <link rel="stylesheet" href="../css/avaliacao.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../images/d.png" alt="Logo" class="logo" />
+      <h1>Farmácia Destaque</h1>
+      <button id="cancel-button">
+        <a href="index.html" style="text-decoration: none; color: inherit;">Voltar</a>
+      </button>
+    </header>
+
+    <main>
+      <section aria-labelledby="avaliacao">
+        <h2 id="avaliacao">Como você nos avalia?</h2>
+
+        <!-- Formulário de envio -->
+        <form action="../server/avaliar.php" method="POST">
+          <div class="emoji-container">
+            <label class="emoji" id="emoji-indiferente">
+              <input type="radio" name="nota" value="1" required hidden>
+              <img src="../images/angry.png" alt="péssimo" />
+              <p>Péssimo</p>
+            </label>
+
+            <label class="emoji" id="emoji-pouco">
+              <input type="radio" name="nota" value="2" hidden>
+              <img src="../images/sad.png" alt="ruim" />
+              <p>Ruim</p>
+            </label>
+
+            <label class="emoji" id="emoji-moderado">
+              <input type="radio" name="nota" value="3" hidden>
+              <img src="../images/confused.png" alt="regular" />
+              <p>Regular</p>
+            </label>
+
+            <label class="emoji" id="emoji-satisfeito">
+              <input type="radio" name="nota" value="4" hidden>
+              <img src="../images/happy.png" alt="satisfeito" />
+              <p>Bom</p>
+            </label>
+
+            <label class="emoji" id="emoji-muito">
+              <input type="radio" name="nota" value="5" hidden>
+              <img src="../images/very-happy.png" alt="feliz" />
+              <p>Ótimo</p>
+            </label>
+          </div>
+
+          <label for="feedback">Descreva melhor sua experiência:</label>
+          <textarea id="feedback" name="feedback" rows="4" placeholder="Comentário (opcional)"></textarea>
+
+          <div class="error-message" id="error-message"></div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-button">Enviar Avaliação</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="../js/avaliacao.js"></script>
+  </body>
+</html>
