@@ -1,21 +1,21 @@
 <?php
 // salvar_avaliacao.php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conectar ao banco de dados
+    // Conecta ao banco de dados
     $conn = new mysqli("localhost", "root", "admin", "fciaeduardo"); // Altere conforme necessário
 
-    // Verifique a conexão
+    // Verifica a conexão com o banco
     if ($conn->connect_error) {
         die("Conexão falhou: " . $conn->connect_error);
     }
 
-    // Obter os valores do formulário
+    // Recebe os valores do formulário
     $nota = $_POST['nota'];
     $feedback = $_POST['feedback'];
-    $usuario_id = 1; // Substitua com o ID do usuário, caso tenha um sistema de login
+    $usuario_id = 1;
 
-    // Preparar a query para inserir a avaliação no banco de dados
-    $sql = "INSERT INTO Avaliacoes (nota, feedback, data) VALUES ('$nota', '$feedback', NOW())";
+    // Query para inserir a avaliação no banco de dados
+    $sql = "INSERT INTO Avaliacoes (usuario_id, nota, feedback, data) VALUES ('$usuario_id', '$nota', '$feedback', NOW())";
 
     if ($conn->query($sql) === TRUE) {
         echo "Avaliação salva com sucesso!";
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Erro ao salvar avaliação: " . $conn->error;
     }
 
-    // Fechar a conexão
+    // Fecha a conexão
     $conn->close();
 }
 ?>
